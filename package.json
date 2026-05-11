@@ -1,0 +1,49 @@
+{
+  "name": "lionra-sharepanel",
+  "version": "1.0.0",
+  "description": "Zero-dependency, plug-and-play share panel for any web page. 19 platforms, 4 layouts, mobile deep links, TypeScript types.",
+  "author": "Manier Valentin",
+  "license": "MIT",
+  "keywords": [
+    "share",
+    "share-panel",
+    "social-share",
+    "web-share-api",
+    "whatsapp",
+    "telegram",
+    "twitter",
+    "facebook",
+    "vanilla-js",
+    "zero-dependency",
+    "mobile",
+    "deep-link",
+    "typescript"
+  ],
+  "type": "module",
+  "main": "./share.js",
+  "module": "./share.js",
+  "types": "./share.d.ts",
+  "exports": {
+    ".": {
+      "types": "./share.d.ts",
+      "import": "./share.js"
+    }
+  },
+  "files": [
+    "share.js",
+    "share.d.ts",
+    "README.md"
+  ],
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lionra/sharepanel"
+  },
+  "bugs": {
+    "url": "https://github.com/lionra/sharepanel/issues"
+  },
+  "homepage": "https://github.com/lionra/sharepanel#readme",
+  "engines": {
+    "node": ">=14"
+  }
+}
