@@ -1,4 +1,4 @@
-# 𝕃ìonra · SharePanel
+# Lìonra · SharePanel
 
 **A zero-dependency, plug-and-play JavaScript library for adding a native-feel share panel to any web page.**  
 One file. No build step. 19 platforms. 4 layouts. Compatible with vanilla JS, React, Vue, Angular, Next.js, Nuxt, CommonJS, ESM, and AMD.
