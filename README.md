@@ -7,17 +7,17 @@ One file. No build step. 19 platforms. 4 layouts. Compatible with vanilla JS, Re
 
 ## ✨ Features
 
-- **Zero dependencies** — pure vanilla JS, ~66 KB unminified (~15 KB gzip)
-- **Universal UMD format** — `<script>`, `require()`, ESM default/named `import`, AMD/RequireJS
-- **19 platforms** — WhatsApp, Telegram, X/Twitter, Facebook, Messenger, Instagram, LinkedIn, Reddit, Pinterest, Bluesky, Mastodon, Discord, Slack, Teams, Snapchat, Email, SMS, Native Share API, Copy link
-- **4 layouts** — `sheet` (iOS-style), `popup` (centered modal), `list` (vertical drawer), `grid` (Android-style)
-- **Mobile deep links** — opens installed apps directly; falls back to web automatically after 1.5 s if the app isn't installed
-- **Scroll hints** — animated bouncing arrow + fade gradient on `sheet` (→), `grid` (↓) and `list` (↓); disappear when the end is reached
-- **Native Share API** — graceful fallback if unavailable
-- **Dark / Light / Auto theme** — follows `html[data-theme]`
-- **i18n / localization** — built-in `en` and `fr` locales; fully customizable strings
-- **Fully customizable** — accent color, favicon, share text, platform order
-- **TypeScript types** — `share.d.ts` included
+- **Zero dependencies** : pure vanilla JS, ~66 KB unminified (~15 KB gzip)
+- **Universal UMD format** : `<script>`, `require()`, ESM default/named `import`, AMD/RequireJS
+- **19 platforms** : WhatsApp, Telegram, X/Twitter, Facebook, Messenger, Instagram, LinkedIn, Reddit, Pinterest, Bluesky, Mastodon, Discord, Slack, Teams, Snapchat, Email, SMS, Native Share API, Copy link
+- **4 layouts** : `sheet` (iOS-style), `popup` (centered modal), `list` (vertical drawer), `grid` (Android-style)
+- **Mobile deep links** : opens installed apps directly; falls back to web automatically after 1.5 s if the app isn't installed
+- **Scroll hints** : animated bouncing arrow + fade gradient on `sheet` (→), `grid` (↓) and `list` (↓); disappear when the end is reached
+- **Native Share API** : graceful fallback if unavailable
+- **Dark / Light / Auto theme** : follows `html[data-theme]`
+- **i18n / localization** : built-in `en` and `fr` locales; fully customizable strings
+- **Fully customizable** : accent color, favicon, share text, platform order
+- **TypeScript types** : `share.d.ts` included
 
 ---
 
@@ -74,7 +74,7 @@ SharePanel.init({ trigger: "#btn-share", name: "Mon App", locale: "fr" });
 
 ### Partial override
 
-Pass a `LocaleStrings` object to override only the strings you need — all other strings fall back to the `'en'` base:
+Pass a `LocaleStrings` object to override only the strings you need, all other strings fall back to the `'en'` base:
 
 ```js
 SharePanel.init({
@@ -154,12 +154,12 @@ Each `LocalePlatformEntry` accepts:
 
 | Value   | Description                                                             |
 | ------- | ----------------------------------------------------------------------- |
-| `sheet` | iOS-style bottom drawer — icons in a horizontally scrollable row        |
-| `popup` | Centered modal — 3-column icon grid                                     |
-| `list`  | Bottom drawer — vertical scrollable list with sub-labels and chevrons   |
-| `grid`  | Android-style bottom drawer — 4-column icon grid, vertically scrollable |
+| `sheet` | iOS-style bottom drawer : icons in a horizontally scrollable row        |
+| `popup` | Centered modal : 3-column icon grid                                     |
+| `list`  | Bottom drawer : vertical scrollable list with sub-labels and chevrons   |
+| `grid`  | Android-style bottom drawer : 4-column icon grid, vertically scrollable |
 
-> **Scroll hints** — on `sheet`, `grid`, and `list`, a bouncing arrow + fade gradient indicates more content is available to scroll. Both disappear automatically once the end is reached.
+> **Scroll hints**, on `sheet`, `grid`, and `list`, a bouncing arrow + fade gradient indicates more content is available to scroll. Both disappear automatically once the end is reached.
 
 ---
 
@@ -174,11 +174,11 @@ Each `LocalePlatformEntry` accepts:
 | `facebook`  | Facebook         | ✅ `fb://`                                                |
 | `messenger` | Messenger        | ✅ `fb-messenger://`                                      |
 | `instagram` | Instagram        | ✅ `instagram://` (opens app; URL pre-fill not supported) |
-| `linkedin`  | LinkedIn         | — web only                                                |
-| `reddit`    | Reddit           | — web only                                                |
+| `linkedin`  | LinkedIn         | web only                                                  |
+| `reddit`    | Reddit           | web only                                                  |
 | `pinterest` | Pinterest        | ✅ `pinterest://`                                         |
-| `bluesky`   | Bluesky          | — web only                                                |
-| `mastodon`  | Mastodon         | — web only (mastodon.social)                              |
+| `bluesky`   | Bluesky          | web only                                                  |
+| `mastodon`  | Mastodon         | web only (mastodon.social)                                |
 | `discord`   | Discord          | ✅ `discord://` (opens app; no pre-fill)                  |
 | `slack`     | Slack            | ✅ `slack://` (opens app; no pre-fill)                    |
 | `teams`     | Microsoft Teams  | ✅ `msteams://`                                           |
@@ -193,7 +193,7 @@ Each `LocalePlatformEntry` accepts:
 
 ## 📐 Examples
 
-**Minimal — messaging apps only:**
+**Minimal messaging apps only:**
 
 ```js
 SharePanel.init({
@@ -264,7 +264,7 @@ SharePanel.copy(); // copies URL to clipboard
 
 ## 📦 Installation
 
-### Option 1 — Script tag (no tooling required)
+### Option 1 : Script tag (no tooling required)
 
 ```
 my-project/
@@ -280,7 +280,7 @@ my-project/
 </script>
 ```
 
-### Option 2 — npm / yarn
+### Option 2 : npm / yarn
 
 ```bash
 npm install lionra-sharepanel
@@ -288,7 +288,7 @@ npm install lionra-sharepanel
 yarn add lionra-sharepanel
 ```
 
-### Option 3 — CDN (jsDelivr / unpkg)
+### Option 3 : CDN (jsDelivr / unpkg)
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/lionra-sharepanel/share.js"></script>
@@ -350,7 +350,7 @@ export default function ShareButton() {
 }
 ```
 
-> SharePanel manipulates the DOM directly — always call `init()` inside `useEffect` (React) or `onMounted` (Vue) to ensure the DOM is ready.
+> SharePanel manipulates the DOM directly, always call `init()` inside `useEffect` (React) or `onMounted` (Vue) to ensure the DOM is ready.
 
 ### Vue 3 / Nuxt
 
@@ -369,7 +369,7 @@ onMounted(() => {
 </template>
 ```
 
-**TypeScript** — `share.d.ts` is picked up automatically by Volar/Vetur. If not, add to `tsconfig.json`:
+**TypeScript**, `share.d.ts` is picked up automatically by Volar/Vetur. If not, add to `tsconfig.json`:
 
 ```json
 { "compilerOptions": { "types": ["lionra-sharepanel"] } }
@@ -392,7 +392,7 @@ export class ShareComponent implements AfterViewInit {
 }
 ```
 
-**TypeScript** — if types are not resolved, add to `tsconfig.app.json`:
+**TypeScript**, if types are not resolved, add to `tsconfig.app.json`:
 
 ```json
 {
