@@ -906,9 +906,9 @@
             if (!p) return "";
             const border = p.border ? `border:1px solid ${p.border};` : "";
             return `
-      <button class="sp-btn" data-sp="${key}" aria-label="${p.label}">
-        <div class="sp-circle" style="background:${p.color};${border}">${p.svg}</div>
-        <span class="sp-lbl">${p.label}</span>
+            <button class="sp-btn" data-sp="${key}" aria-label="${_tPlatform(key, "label")}">
+            <div class="sp-circle" style="background:${p.color};${border}">${p.svg}</div>
+            <span class="sp-lbl">${_tPlatform(key, "label")}</span>
       </button>`;
           })
           .join("");
@@ -925,13 +925,13 @@
 
         const listCopyBtn =
           layout === "list"
-            ? `<button class="sp-list-copy-btn" id="sp-list-copy-btn">Copier</button>`
+            ? `<button class="sp-list-copy-btn" id="sp-list-copy-btn">${_t("copyBtn")}</button>`
             : "";
 
         const copyBar = `
       <div class="sp-copy-bar">
-        <input class="sp-copy-input" id="sp-copy-input" readonly aria-label="Lien à partager" />
-        <button class="sp-copy-btn" id="sp-copy-btn">Copier</button>
+      <input class="sp-copy-input" id="sp-copy-input" readonly aria-label="${_t("ariaShareLink")}" />
+      <button class="sp-copy-btn" id="sp-copy-btn">${_t("copyBtn")}</button>
       </div>`;
 
         // SVG chevrons for scroll hints
@@ -968,7 +968,7 @@
             </div>
           </div>
           ${listCopyBtn}
-          <button class="sp-close" id="sp-close" aria-label="Fermer">${SVG_CLOSE}</button>
+          <button class="sp-close" id="sp-close" aria-label="${_t("ariaClose")}">${SVG_CLOSE}</button>
         </div>
 
         <div class="sp-share-text" id="sp-share-text"></div>
@@ -1124,6 +1124,17 @@
       /* ── Public API ─────────────────────────────────── */
 
       function init(config = {}) {
+        if (typeof config.locale === "string") {
+          _locale = LOCALES[config.locale] || LOCALES.en;
+        } else if (
+          typeof config.locale === "object" &&
+          config.locale !== null
+        ) {
+          _locale = { ...LOCALES.en, ...config.locale };
+        } else {
+          _locale = LOCALES.en;
+        }
+
         const platforms = config.platforms || ALL_PLATFORMS;
         const layout = ["sheet", "popup", "list", "grid"].includes(
           config.layout,
@@ -1197,12 +1208,12 @@
         // Reset copy buttons
         const cb = document.getElementById("sp-copy-btn");
         if (cb) {
-          cb.textContent = "Copy";
+          cb.textContent = _t("copyBtn");
           cb.classList.remove("sp-copied");
         }
         const lcb = document.getElementById("sp-list-copy-btn");
         if (lcb) {
-          lcb.textContent = "Copy";
+          lcb.textContent = _t("copyBtn");
           lcb.classList.remove("sp-copied");
         }
 
@@ -1236,17 +1247,17 @@
             document.execCommand("copy");
           }
         }
-        _toast("✓ Link copied to clipboard");
+        _toast(_t("toastCopied"));
       }
 
       async function copy() {
         await _doCopy();
         const cb = document.getElementById("sp-copy-btn");
         if (cb) {
-          cb.textContent = "✓ Copied";
+          cb.textContent = _t("copiedBtn");
           cb.classList.add("sp-copied");
           setTimeout(() => {
-            cb.textContent = "Copy";
+            cb.textContent = _t("copyBtn");
             cb.classList.remove("sp-copied");
           }, 2400);
         }
@@ -1256,10 +1267,11 @@
         await _doCopy();
         const lcb = document.getElementById("sp-list-copy-btn");
         if (lcb) {
-          lcb.textContent = "✓ Copied!";
+          lcb.textContent = _t("copiedBtnList");
           lcb.classList.add("sp-copied");
           setTimeout(() => {
-            lcb.textContent = "Copy";
+            lcb.textContent = _t("copyBtn");
+
             lcb.classList.remove("sp-copied");
           }, 2400);
         }

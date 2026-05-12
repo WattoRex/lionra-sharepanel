@@ -1,6 +1,6 @@
 {
   "name": "lionra-sharepanel",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Zero-dependency, plug-and-play share panel for any web page. 19 platforms, 4 layouts, mobile deep links, TypeScript types.",
   "author": "Manier Valentin",
   "license": "MIT",
@@ -37,12 +37,12 @@
   "sideEffects": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/lionra/sharepanel"
+    "url": "https://github.com/WattoRex/lionra-sharepanel"
   },
   "bugs": {
-    "url": "https://github.com/lionra/sharepanel/issues"
+    "url": "https://github.com/WattoRex/lionra-sharepanel/issues"
   },
-  "homepage": "https://github.com/lionra/sharepanel#readme",
+  "homepage": "https://github.com/WattoRex/lionra-sharepanel#readme",
   "engines": {
     "node": ">=14"
   }
