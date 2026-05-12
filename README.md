@@ -311,6 +311,8 @@ yarn add lionra-sharepanel
 
 ### ESM (Vite, Rollup, Webpack 5+)
 
+[Vite Live Demo :](https://stackblitz.com/edit/vite-ziwh6tjt?file=package.json,main.js)
+
 ```js
 import SharePanel from "lionra-sharepanel";
 // or named import
@@ -337,6 +339,8 @@ define(["SharePanel"], function (SharePanel) {
 
 ### React / Next.js
 
+[React / Next Live Demo :](https://stackblitz.com/edit/react-t4j2nwf9?file=src%2FApp.js)
+
 ```jsx
 import { useEffect } from "react";
 import SharePanel from "lionra-sharepanel";
@@ -354,14 +358,24 @@ export default function ShareButton() {
 
 ### Vue 3 / Nuxt
 
+[Vue Live Demo :](https://stackblitz.com/edit/vue-zsha1jgo?file=src%2FApp.vue)
+
 ```vue
-<script setup>
-import { onMounted } from "vue";
+<script>
 import SharePanel from "lionra-sharepanel";
 
-onMounted(() => {
-  SharePanel.init({ trigger: "#btn-share", name: "My App" });
-});
+export default {
+  name: "App",
+
+  mounted() {
+    SharePanel.init({
+      trigger: "#btn-share",
+      name: "My App",
+      layout: "sheet",
+      locale: "en",
+    });
+  },
+};
 </script>
 
 <template>
@@ -376,6 +390,8 @@ onMounted(() => {
 ```
 
 ### Angular
+
+[Angular Live Demo :](https://stackblitz.com/edit/angular-wwna1yqz?file=src%2Fmain.ts)
 
 ```ts
 import { Component, AfterViewInit } from "@angular/core";
